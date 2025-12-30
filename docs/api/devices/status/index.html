@@ -1,0 +1,4237 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Inverter Monitoring and Control System for Solar Systems">
+      
+      
+        <meta name="author" content="MeshPower LTD">
+      
+      
+      
+        <link rel="prev" href="../interfaces/modbusRTU/">
+      
+      
+        <link rel="next" href="../../external_api/epever/epever_devices/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.20">
+    
+    
+      
+        <title>Status - TGF-SW-BASESTATION</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../assets/css/pdf-admonition-fix.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#devicesstatus" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="TGF-SW-BASESTATION" class="md-header__button md-logo" aria-label="TGF-SW-BASESTATION" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TGF-SW-BASESTATION
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Status
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/rlm-limited/tgf-sw-basestation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rlm-limited/tgf-sw-basestation
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../api/" class="md-tabs__link md-tabs__link--active">
+        API Reference
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../changelog/" class="md-tabs__link">
+      Changelog
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="TGF-SW-BASESTATION" class="md-nav__button md-logo" aria-label="TGF-SW-BASESTATION" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    TGF-SW-BASESTATION
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/rlm-limited/tgf-sw-basestation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rlm-limited/tgf-sw-basestation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          API Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          API Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          Devices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Devices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../device/" class="md-nav__link">
+        Device
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deviceManager/" class="md-nav__link">
+        Devicemanager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deviceVariables/" class="md-nav__link">
+        Devicevariables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devices_func/" class="md-nav__link">
+        Devices Func
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interface/" class="md-nav__link">
+        Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1_7" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_7" id="__nav_2_1_7_label" tabindex="0">
+          Interfaces
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_7">
+          <span class="md-nav__icon md-icon"></span>
+          Interfaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/modbusRTU/" class="md-nav__link">
+        Modbusrtu
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Status
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Status
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statusflags" class="md-nav__link">
+    StatusFlags
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.StatusFlags" class="md-nav__link">
+    StatusFlags
+  </a>
+  
+    <nav class="md-nav" aria-label="StatusFlags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparisons" class="md-nav__link">
+    Comparisons
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Comparisons" class="md-nav__link">
+    Comparisons
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparisons">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#errorvariablesconfig" class="md-nav__link">
+    ErrorVariablesConfig
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.ErrorVariablesConfig" class="md-nav__link">
+    ErrorVariablesConfig
+  </a>
+  
+    <nav class="md-nav" aria-label="ErrorVariablesConfig">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statusvariables" class="md-nav__link">
+    StatusVariables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.StatusVariables" class="md-nav__link">
+    StatusVariables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.StatusVariables.Config" class="md-nav__link">
+    Config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.StatusVariables.serialize" class="md-nav__link">
+    serialize
+  </a>
+  
+    <nav class="md-nav" aria-label="serialize">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    Status
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Status" class="md-nav__link">
+    Status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Status.__init__" class="md-nav__link">
+    __init__
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Status.compare_vars" class="md-nav__link">
+    compare_vars
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Status.deserialize" class="md-nav__link">
+    deserialize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Status.get_status_to_save" class="md-nav__link">
+    get_status_to_save
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Status.load_error_variable_config_list" class="md-nav__link">
+    load_error_variable_config_list
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Status.parse_vars" class="md-nav__link">
+    parse_vars
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Status.serialize" class="md-nav__link">
+    serialize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Status.update_state_and_state_history" class="md-nav__link">
+    update_state_and_state_history
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Status.update_state_history_and_saving_ts" class="md-nav__link">
+    update_state_history_and_saving_ts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convert_datetime_to_iso" class="md-nav__link">
+    convert_datetime_to_iso
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.convert_datetime_to_iso" class="md-nav__link">
+    convert_datetime_to_iso
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.COMPARISON_OPS" class="md-nav__link">
+    COMPARISON_OPS
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          External API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          External API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+          Epever Inverter
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Epever Inverter
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../external_api/epever/epever_devices/" class="md-nav__link">
+        Epever Devices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../external_api/epever/epever_objects/" class="md-nav__link">
+        Epever Objects
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          Programs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Programs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+          Data Sync
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Data Sync
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programs/data_sync/data_sync/" class="md-nav__link">
+        Data Sync
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programs/data_sync/data_sync_settings/" class="md-nav__link">
+        Data Sync Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programs/data_sync/schemas/" class="md-nav__link">
+        Schemas
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/" class="md-nav__link">
+        Reference Index
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statusflags" class="md-nav__link">
+    StatusFlags
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.StatusFlags" class="md-nav__link">
+    StatusFlags
+  </a>
+  
+    <nav class="md-nav" aria-label="StatusFlags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparisons" class="md-nav__link">
+    Comparisons
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Comparisons" class="md-nav__link">
+    Comparisons
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparisons">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#errorvariablesconfig" class="md-nav__link">
+    ErrorVariablesConfig
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.ErrorVariablesConfig" class="md-nav__link">
+    ErrorVariablesConfig
+  </a>
+  
+    <nav class="md-nav" aria-label="ErrorVariablesConfig">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statusvariables" class="md-nav__link">
+    StatusVariables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.StatusVariables" class="md-nav__link">
+    StatusVariables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.StatusVariables.Config" class="md-nav__link">
+    Config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.StatusVariables.serialize" class="md-nav__link">
+    serialize
+  </a>
+  
+    <nav class="md-nav" aria-label="serialize">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    Status
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Status" class="md-nav__link">
+    Status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Status.__init__" class="md-nav__link">
+    __init__
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Status.compare_vars" class="md-nav__link">
+    compare_vars
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Status.deserialize" class="md-nav__link">
+    deserialize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Status.get_status_to_save" class="md-nav__link">
+    get_status_to_save
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Status.load_error_variable_config_list" class="md-nav__link">
+    load_error_variable_config_list
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Status.parse_vars" class="md-nav__link">
+    parse_vars
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Status.serialize" class="md-nav__link">
+    serialize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Status.update_state_and_state_history" class="md-nav__link">
+    update_state_and_state_history
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.Status.update_state_history_and_saving_ts" class="md-nav__link">
+    update_state_history_and_saving_ts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convert_datetime_to_iso" class="md-nav__link">
+    convert_datetime_to_iso
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.convert_datetime_to_iso" class="md-nav__link">
+    convert_datetime_to_iso
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices.status.COMPARISON_OPS" class="md-nav__link">
+    COMPARISON_OPS
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+  
+  
+
+
+<h1 id="devicesstatus">devices.status<a class="headerlink" href="#devicesstatus" title="Permanent link">&para;</a></h1>
+<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
+<h3 id="statusflags">StatusFlags<a class="headerlink" href="#statusflags" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="devices.status.StatusFlags"></a>
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="enum.Enum">Enum</span></code></p>
+
+
+      <p>Enumeration of device status flag levels.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.StatusFlags.OK">OK</span></code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Device is operating normally.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.StatusFlags.WARNING">WARNING</span></code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Device has a warning condition.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.StatusFlags.ERROR">ERROR</span></code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Device has an error condition.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.StatusFlags.URGENT">URGENT</span></code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Device has an urgent condition requiring immediate attention.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+              <details class="quote">
+                <summary>Source code in <code>devices/status.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">StatusFlags</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enumeration of device status flag levels.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        OK: Device is operating normally.</span>
+<span class="sd">        WARNING: Device has a warning condition.</span>
+<span class="sd">        ERROR: Device has an error condition.</span>
+<span class="sd">        URGENT: Device has an urgent condition requiring immediate attention.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">OK</span> <span class="o">=</span> <span class="s2">&quot;ok&quot;</span>
+    <span class="n">WARNING</span> <span class="o">=</span> <span class="s2">&quot;warning&quot;</span>
+    <span class="n">ERROR</span> <span class="o">=</span> <span class="s2">&quot;error&quot;</span>
+    <span class="n">URGENT</span> <span class="o">=</span> <span class="s2">&quot;urgent&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h3 id="comparisons">Comparisons<a class="headerlink" href="#comparisons" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="devices.status.Comparisons"></a>
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="enum.Enum">Enum</span></code></p>
+
+
+      <p>Enumeration of comparison operators for threshold checking.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.Comparisons.EQUAL">EQUAL</span></code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Check if value equals threshold.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.Comparisons.EQUAL_OR_LESS">EQUAL_OR_LESS</span></code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Check if value is less than or equal to threshold.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.Comparisons.EQUAL_OR_GREATER">EQUAL_OR_GREATER</span></code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Check if value is greater than or equal to threshold.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.Comparisons.LESS_THAN">LESS_THAN</span></code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Check if value is less than threshold.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.Comparisons.GREATER_THAN">GREATER_THAN</span></code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Check if value is greater than threshold.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.Comparisons.AND">AND</span></code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Logical AND operation.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+              <details class="quote">
+                <summary>Source code in <code>devices/status.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Comparisons</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enumeration of comparison operators for threshold checking.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        EQUAL: Check if value equals threshold.</span>
+<span class="sd">        EQUAL_OR_LESS: Check if value is less than or equal to threshold.</span>
+<span class="sd">        EQUAL_OR_GREATER: Check if value is greater than or equal to threshold.</span>
+<span class="sd">        LESS_THAN: Check if value is less than threshold.</span>
+<span class="sd">        GREATER_THAN: Check if value is greater than threshold.</span>
+<span class="sd">        AND: Logical AND operation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">EQUAL</span> <span class="o">=</span> <span class="s2">&quot;equal&quot;</span>
+    <span class="n">EQUAL_OR_LESS</span> <span class="o">=</span> <span class="s2">&quot;equal_or_less&quot;</span>
+    <span class="n">EQUAL_OR_GREATER</span> <span class="o">=</span> <span class="s2">&quot;equal_or_greater&quot;</span>
+    <span class="n">LESS_THAN</span> <span class="o">=</span> <span class="s2">&quot;less_than&quot;</span>
+    <span class="n">GREATER_THAN</span> <span class="o">=</span> <span class="s2">&quot;greater_than&quot;</span>
+    <span class="n">AND</span> <span class="o">=</span> <span class="s2">&quot;and&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h3 id="errorvariablesconfig">ErrorVariablesConfig<a class="headerlink" href="#errorvariablesconfig" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="devices.status.ErrorVariablesConfig"></a>
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="pydantic.BaseModel">BaseModel</span></code></p>
+
+
+      <p>Configuration for error detection based on device variables.</p>
+<p>Defines how a device variable should be monitored and what conditions
+trigger error, warning, or urgent status flags.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.ErrorVariablesConfig.variable_name">variable_name</span></code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name of the device variable to monitor.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.ErrorVariablesConfig.error_name">error_name</span></code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Unique identifier for this error condition.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.ErrorVariablesConfig.description">description</span></code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Human-readable description of the error condition.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.ErrorVariablesConfig.flag">flag</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="devices.status.StatusFlags" href="#devices.status.StatusFlags">StatusFlags</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Status flag to set when threshold condition is met.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.ErrorVariablesConfig.threshold">threshold</span></code></td>
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Threshold value for comparison.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.ErrorVariablesConfig.comparison">comparison</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="devices.status.Comparisons" href="#devices.status.Comparisons">Comparisons</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Comparison operator to use for threshold checking.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.ErrorVariablesConfig.save_interval">save_interval</span></code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Time interval between status saves (e.g., "1m", "5s").
+Defaults to "1m".</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+              <details class="quote">
+                <summary>Source code in <code>devices/status.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ErrorVariablesConfig</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Configuration for error detection based on device variables.</span>
+
+<span class="sd">    Defines how a device variable should be monitored and what conditions</span>
+<span class="sd">    trigger error, warning, or urgent status flags.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        variable_name: Name of the device variable to monitor.</span>
+<span class="sd">        error_name: Unique identifier for this error condition.</span>
+<span class="sd">        description: Human-readable description of the error condition.</span>
+<span class="sd">        flag: Status flag to set when threshold condition is met.</span>
+<span class="sd">        threshold: Threshold value for comparison.</span>
+<span class="sd">        comparison: Comparison operator to use for threshold checking.</span>
+<span class="sd">        save_interval: Time interval between status saves (e.g., &quot;1m&quot;, &quot;5s&quot;).</span>
+<span class="sd">            Defaults to &quot;1m&quot;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">variable_name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">error_name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">description</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">flag</span><span class="p">:</span> <span class="n">StatusFlags</span>
+    <span class="n">threshold</span><span class="p">:</span> <span class="n">Any</span>
+    <span class="n">comparison</span><span class="p">:</span> <span class="n">Comparisons</span>
+    <span class="n">save_interval</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;1m&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h3 id="statusvariables">StatusVariables<a class="headerlink" href="#statusvariables" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="devices.status.StatusVariables"></a>
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="pydantic.BaseModel">BaseModel</span></code></p>
+
+
+      <p>Represents a single status/error condition state.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.StatusVariables.timestamp">timestamp</span></code></td>
+            <td>
+                  <code><span title="datetime.datetime">datetime</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Timestamp when this status was detected or updated.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.StatusVariables.error_name">error_name</span></code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Unique identifier for the error condition.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.StatusVariables.flag">flag</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="devices.status.StatusFlags" href="#devices.status.StatusFlags">StatusFlags</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Current status flag level.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.StatusVariables.description">description</span></code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Human-readable description of the status/error.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.StatusVariables.last_saving_timestamp">last_saving_timestamp</span></code></td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="datetime.datetime">datetime</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Timestamp of when this status was last saved.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.StatusVariables._err_var_config">_err_var_config</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="devices.status.ErrorVariablesConfig" href="#devices.status.ErrorVariablesConfig">ErrorVariablesConfig</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Reference to the error variable configuration.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="config" open>
+  <summary>Config</summary>
+  <p>use_enum_values: Use enum values in serialization.
+extra: Set to "ignore" to ignore extra fields during validation.
+validate_by_name: Enable validation by field name.</p>
+</details>
+              <details class="quote">
+                <summary>Source code in <code>devices/status.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">StatusVariables</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Represents a single status/error condition state.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        timestamp: Timestamp when this status was detected or updated.</span>
+<span class="sd">        error_name: Unique identifier for the error condition.</span>
+<span class="sd">        flag: Current status flag level.</span>
+<span class="sd">        description: Human-readable description of the status/error.</span>
+<span class="sd">        last_saving_timestamp: Timestamp of when this status was last saved.</span>
+<span class="sd">        _err_var_config: Reference to the error variable configuration.</span>
+
+<span class="sd">    Config:</span>
+<span class="sd">        use_enum_values: Use enum values in serialization.</span>
+<span class="sd">        extra: Set to &quot;ignore&quot; to ignore extra fields during validation.</span>
+<span class="sd">        validate_by_name: Enable validation by field name.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">timestamp</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="n">error_name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">flag</span><span class="p">:</span> <span class="n">StatusFlags</span>
+    <span class="n">description</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">last_saving_timestamp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_err_var_config</span><span class="p">:</span> <span class="n">ErrorVariablesConfig</span>
+
+    <span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Pydantic model configuration.&quot;&quot;&quot;</span>
+
+        <span class="n">use_enum_values</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">extra</span> <span class="o">=</span> <span class="s2">&quot;ignore&quot;</span>
+        <span class="n">validate_by_name</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attributes_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Serialize the status variable to a dictionary.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            attributes_list: Optional list of attribute names to include.</span>
+<span class="sd">                If empty, all attributes are included.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Dictionary representation of the status variable.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">attributes_list</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_dump</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&quot;json&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_dump</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">attributes_list</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;json&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="devices.status.StatusVariables.Config" class="doc doc-heading">
+            <code>Config</code>
+
+
+<a href="#devices.status.StatusVariables.Config" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+
+      <p>Pydantic model configuration.</p>
+
+              <details class="quote">
+                <summary>Source code in <code>devices/status.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pydantic model configuration.&quot;&quot;&quot;</span>
+
+    <span class="n">use_enum_values</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">extra</span> <span class="o">=</span> <span class="s2">&quot;ignore&quot;</span>
+    <span class="n">validate_by_name</span> <span class="o">=</span> <span class="kc">True</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="devices.status.StatusVariables.serialize" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">serialize</span><span class="p">(</span><span class="n">attributes_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span></code>
+
+<a href="#devices.status.StatusVariables.serialize" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Serialize the status variable to a dictionary.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>attributes_list</code></td>
+            <td>
+                  <code>list[str]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional list of attribute names to include.
+If empty, all attributes are included.</p>
+              </div>
+            </td>
+            <td>
+                  <code>[]</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>dict[str, <span title="typing.Any">Any</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Dictionary representation of the status variable.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>devices/status.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attributes_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Serialize the status variable to a dictionary.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        attributes_list: Optional list of attribute names to include.</span>
+<span class="sd">            If empty, all attributes are included.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Dictionary representation of the status variable.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">attributes_list</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_dump</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&quot;json&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_dump</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">attributes_list</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;json&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h3 id="status">Status<a class="headerlink" href="#status" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="devices.status.Status"></a>
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="pydantic.BaseModel">BaseModel</span></code></p>
+
+
+      <p>Manages device status monitoring, error detection, and state tracking.</p>
+<p>This class monitors device variables against configured thresholds,
+tracks status changes, and manages state history for persistence.
+It evaluates device variables against error configurations and determines
+when status changes should be saved.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.Status.state">state</span></code></td>
+            <td>
+                  <code>list[<a class="autorefs autorefs-internal" title="devices.status.StatusVariables" href="#devices.status.StatusVariables">StatusVariables</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Current list of status variables representing active status conditions.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.Status.state_history">state_history</span></code></td>
+            <td>
+                  <code>dict[str, <a class="autorefs autorefs-internal" title="devices.status.StatusVariables" href="#devices.status.StatusVariables">StatusVariables</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Dictionary mapping error names to their last saved status.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="devices.status.Status.error_variable_config_list">error_variable_config_list</span></code></td>
+            <td>
+                  <code>list[<a class="autorefs autorefs-internal" title="devices.status.ErrorVariablesConfig" href="#devices.status.ErrorVariablesConfig">ErrorVariablesConfig</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of error variable configurations to monitor.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+              <details class="quote">
+                <summary>Source code in <code>devices/status.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span>
+<span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span>
+<span class="normal">378</span>
+<span class="normal">379</span>
+<span class="normal">380</span>
+<span class="normal">381</span>
+<span class="normal">382</span>
+<span class="normal">383</span>
+<span class="normal">384</span>
+<span class="normal">385</span>
+<span class="normal">386</span>
+<span class="normal">387</span>
+<span class="normal">388</span>
+<span class="normal">389</span>
+<span class="normal">390</span>
+<span class="normal">391</span>
+<span class="normal">392</span>
+<span class="normal">393</span>
+<span class="normal">394</span>
+<span class="normal">395</span>
+<span class="normal">396</span>
+<span class="normal">397</span>
+<span class="normal">398</span>
+<span class="normal">399</span>
+<span class="normal">400</span>
+<span class="normal">401</span>
+<span class="normal">402</span>
+<span class="normal">403</span>
+<span class="normal">404</span>
+<span class="normal">405</span>
+<span class="normal">406</span>
+<span class="normal">407</span>
+<span class="normal">408</span>
+<span class="normal">409</span>
+<span class="normal">410</span>
+<span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span>
+<span class="normal">423</span>
+<span class="normal">424</span>
+<span class="normal">425</span>
+<span class="normal">426</span>
+<span class="normal">427</span>
+<span class="normal">428</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Status</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Manages device status monitoring, error detection, and state tracking.</span>
+
+<span class="sd">    This class monitors device variables against configured thresholds,</span>
+<span class="sd">    tracks status changes, and manages state history for persistence.</span>
+<span class="sd">    It evaluates device variables against error configurations and determines</span>
+<span class="sd">    when status changes should be saved.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        state: Current list of status variables representing active status conditions.</span>
+<span class="sd">        state_history: Dictionary mapping error names to their last saved status.</span>
+<span class="sd">        error_variable_config_list: List of error variable configurations to monitor.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">state</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">StatusVariables</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">state_history</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">StatusVariables</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">error_variable_config_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">ErrorVariablesConfig</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error_variables_path</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize Status with error variable configurations.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            error_variables_path: Path to YAML file containing error variable</span>
+<span class="sd">                configurations.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">error_variable_config_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_error_variable_config_list</span><span class="p">(</span>
+            <span class="n">error_variables_path</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Serialize the status state to a dictionary.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Dictionary containing serialized state and state_history.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="s2">&quot;state_history&quot;</span><span class="p">]:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="n">adapter</span> <span class="o">=</span> <span class="n">TypeAdapter</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">var</span><span class="p">]</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">dump_python</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;json&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span>
+
+    <span class="k">def</span> <span class="nf">deserialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span> <span class="o">|</span> <span class="nb">dict</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Self</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Deserialize status state from a dictionary.</span>
+
+<span class="sd">        Restores the state and state_history from previously serialized data.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            status_dict: Dictionary containing serialized state and state_history.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Self for method chaining.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">status_dict</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;status_dict is empty can not deserialize status&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">error_variable_config_list</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">state_dict</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
+                    <span class="p">(</span>
+                        <span class="n">d</span>
+                        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">status_dict</span><span class="p">[</span><span class="s2">&quot;state&quot;</span><span class="p">]</span>
+                        <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;error_name&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">i</span><span class="o">.</span><span class="n">error_name</span>
+                    <span class="p">),</span>
+                    <span class="kc">None</span><span class="p">,</span>
+                <span class="p">)</span>
+
+                <span class="n">state_history_dict</span> <span class="o">=</span> <span class="n">status_dict</span><span class="p">[</span><span class="s2">&quot;state_history&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">error_name</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">state_history</span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">error_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">StatusVariables</span><span class="p">(</span><span class="o">**</span><span class="n">state_history_dict</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">**</span><span class="n">state_dict</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;could not restore (</span><span class="si">{</span><span class="n">i</span><span class="o">.</span><span class="n">error_name</span><span class="si">}</span><span class="s2">), due to </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">load_error_variable_config_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Load error variable configurations from a YAML file.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            path: Path to the YAML file containing error variable configurations.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            List of ErrorVariablesConfig instances, or None if file not found.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">ErrorVariablesConfig</span><span class="p">(</span><span class="o">**</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;file=</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2"> not found&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">update_state_and_state_history</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">timestamp</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span>
+        <span class="n">error_variable_config</span><span class="p">:</span> <span class="n">ErrorVariablesConfig</span><span class="p">,</span>
+        <span class="n">flag_enum</span><span class="p">:</span> <span class="n">StatusFlags</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Update state with a new status variable and check if flag changed.</span>
+
+<span class="sd">        Creates a new StatusVariables instance, adds it to the state list,</span>
+<span class="sd">        and checks if the flag has changed compared to the state history.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            timestamp: Timestamp for the new status.</span>
+<span class="sd">            error_variable_config: Error variable configuration.</span>
+<span class="sd">            flag_enum: Status flag to set.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            True if the flag matches the previous state (no change),</span>
+<span class="sd">            False if the flag has changed or no previous state exists.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">status_obj</span> <span class="o">=</span> <span class="n">StatusVariables</span><span class="p">(</span>
+            <span class="n">error_name</span><span class="o">=</span><span class="n">error_variable_config</span><span class="o">.</span><span class="n">error_name</span><span class="p">,</span>
+            <span class="n">flag</span><span class="o">=</span><span class="n">flag_enum</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="n">error_variable_config</span><span class="o">.</span><span class="n">description</span><span class="p">,</span>
+            <span class="n">timestamp</span><span class="o">=</span><span class="n">timestamp</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">status_obj</span><span class="o">.</span><span class="n">_err_var_config</span> <span class="o">=</span> <span class="n">error_variable_config</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">status_obj</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">state_history</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+        <span class="n">old_state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">state_history</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">error_variable_config</span><span class="o">.</span><span class="n">error_name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">old_state</span> <span class="ow">or</span> <span class="n">old_state</span><span class="o">.</span><span class="n">flag</span> <span class="o">!=</span> <span class="n">status_obj</span><span class="o">.</span><span class="n">flag</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">compare_vars</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">timestamp</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span>
+        <span class="n">device_variable</span><span class="p">:</span> <span class="n">DeviceVariable</span><span class="p">,</span>
+        <span class="n">error_variable_conf</span><span class="p">:</span> <span class="n">ErrorVariablesConfig</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compare a device variable against its error configuration threshold.</span>
+
+<span class="sd">        Evaluates the device variable&#39;s processed_data against the threshold</span>
+<span class="sd">        using the configured comparison operator. Updates state accordingly</span>
+<span class="sd">        and returns whether the threshold condition was met (triggered).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            timestamp: Timestamp for status evaluation.</span>
+<span class="sd">            device_variable: Device variable to evaluate.</span>
+<span class="sd">            error_variable_conf: Error variable configuration with threshold</span>
+<span class="sd">                and comparison settings.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            True if the threshold condition was met (error triggered),</span>
+<span class="sd">            False if the variable is within normal limits (OK status).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">error_variable_conf</span><span class="o">.</span><span class="n">comparison</span> <span class="ow">and</span> <span class="n">error_variable_conf</span><span class="o">.</span><span class="n">flag</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="n">op</span> <span class="o">=</span> <span class="n">COMPARISON_OPS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">error_variable_conf</span><span class="o">.</span><span class="n">comparison</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">op</span> <span class="ow">and</span> <span class="n">op</span><span class="p">(</span><span class="n">device_variable</span><span class="o">.</span><span class="n">processed_data</span><span class="p">,</span> <span class="n">error_variable_conf</span><span class="o">.</span><span class="n">threshold</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_state_and_state_history</span><span class="p">(</span>
+                <span class="n">timestamp</span><span class="o">=</span><span class="n">timestamp</span><span class="p">,</span>
+                <span class="n">error_variable_config</span><span class="o">=</span><span class="n">error_variable_conf</span><span class="p">,</span>
+                <span class="n">flag_enum</span><span class="o">=</span><span class="n">error_variable_conf</span><span class="o">.</span><span class="n">flag</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_state_and_state_history</span><span class="p">(</span>
+            <span class="n">timestamp</span><span class="o">=</span><span class="n">timestamp</span><span class="p">,</span>
+            <span class="n">error_variable_config</span><span class="o">=</span><span class="n">error_variable_conf</span><span class="p">,</span>
+            <span class="n">flag_enum</span><span class="o">=</span><span class="n">StatusFlags</span><span class="o">.</span><span class="n">OK</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">update_state_history_and_saving_ts</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">,</span> <span class="n">new_state</span><span class="p">:</span> <span class="n">StatusVariables</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StatusVariables</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Update state history with a new state and set its saving timestamp.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            timestamp: Timestamp to set as the last saving timestamp.</span>
+<span class="sd">            new_state: StatusVariables instance to save to history.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The updated StatusVariables instance with last_saving_timestamp set.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">new_state</span><span class="o">.</span><span class="n">last_saving_timestamp</span> <span class="o">=</span> <span class="n">timestamp</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">state_history</span><span class="p">[</span><span class="n">new_state</span><span class="o">.</span><span class="n">error_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_state</span>
+        <span class="k">return</span> <span class="n">new_state</span>
+
+    <span class="k">def</span> <span class="nf">get_status_to_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">StatusVariables</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Determine which status variables should be saved to disk.</span>
+
+<span class="sd">        Status variables are saved if:</span>
+<span class="sd">        - They are new (not in state_history)</span>
+<span class="sd">        - Their flag has changed since last save</span>
+<span class="sd">        - The save interval has elapsed since last save</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            timestamp: Current timestamp for comparison.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            List of StatusVariables to save, sorted by error_name, or None</span>
+<span class="sd">            if no status needs to be saved.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">status_to_save</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">state_history</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">:</span>
+                <span class="n">status_to_save</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">update_state_history_and_saving_ts</span><span class="p">(</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span>
+                <span class="n">status_to_save</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">status_to_save</span><span class="p">:</span> <span class="n">status_to_save</span><span class="o">.</span><span class="n">error_name</span>
+            <span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">new_state</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">:</span>
+            <span class="n">old_state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">state_history</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">new_state</span><span class="o">.</span><span class="n">error_name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">old_state</span><span class="p">:</span>
+                <span class="n">status_to_save</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">update_state_history_and_saving_ts</span><span class="p">(</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">new_state</span><span class="p">)</span>
+                <span class="p">)</span>
+                <span class="k">continue</span>
+
+            <span class="k">if</span> <span class="n">timestamp</span> <span class="o">-</span> <span class="n">old_state</span><span class="o">.</span><span class="n">last_saving_timestamp</span> <span class="o">&gt;</span> <span class="n">timedelta</span><span class="p">(</span>
+                <span class="n">seconds</span><span class="o">=</span><span class="n">timeparse</span><span class="p">(</span><span class="n">new_state</span><span class="o">.</span><span class="n">_err_var_config</span><span class="o">.</span><span class="n">save_interval</span><span class="p">)</span>
+            <span class="p">):</span>
+                <span class="n">status_to_save</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">update_state_history_and_saving_ts</span><span class="p">(</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">new_state</span><span class="p">)</span>
+                <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">old_state</span><span class="o">.</span><span class="n">flag</span> <span class="o">!=</span> <span class="n">new_state</span><span class="o">.</span><span class="n">flag</span><span class="p">:</span>
+                <span class="n">status_to_save</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">update_state_history_and_saving_ts</span><span class="p">(</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">new_state</span><span class="p">)</span>
+                <span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">status_to_save</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span>
+            <span class="n">status_to_save</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">status_to_save</span><span class="p">:</span> <span class="n">status_to_save</span><span class="o">.</span><span class="n">error_name</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">parse_vars</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="nb">vars</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">DeviceVariable</span><span class="p">],</span> <span class="n">timestamp</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="n">StatusVariables</span><span class="p">],</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">DeviceVariable</span><span class="p">]]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Parse device variables and evaluate status conditions.</span>
+
+<span class="sd">        Evaluates all device variables against their error configurations,</span>
+<span class="sd">        updates the status state, and determines which status variables</span>
+<span class="sd">        should be saved. Also identifies which variables triggered error</span>
+<span class="sd">        conditions.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            vars: Dictionary mapping variable names to DeviceVariable instances.</span>
+<span class="sd">            timestamp: Timestamp for status evaluation.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Tuple of (list of StatusVariables to save, dict of triggered variables),</span>
+<span class="sd">            or (None, None) if no status needs to be saved or error configs are missing.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">error_variable_config_list</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;error variable list was not provided&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="n">triggered_vars</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">err_var_conf</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">error_variable_config_list</span><span class="p">:</span>
+            <span class="n">vars_to_compare</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">err_var_conf</span><span class="o">.</span><span class="n">variable_name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">vars_to_compare</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;error name: </span><span class="si">{</span><span class="n">err_var_conf</span><span class="o">.</span><span class="n">error_name</span><span class="si">}</span><span class="s2"> not found in </span><span class="si">{</span><span class="nb">vars</span><span class="si">=}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">compare_vars</span><span class="p">(</span>
+                <span class="n">timestamp</span><span class="o">=</span><span class="n">timestamp</span><span class="p">,</span>
+                <span class="n">device_variable</span><span class="o">=</span><span class="n">vars_to_compare</span><span class="p">,</span>
+                <span class="n">error_variable_conf</span><span class="o">=</span><span class="n">err_var_conf</span><span class="p">,</span>
+            <span class="p">):</span>
+                <span class="n">triggered_vars</span><span class="p">[</span><span class="n">err_var_conf</span><span class="o">.</span><span class="n">variable_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">vars_to_compare</span>
+        <span class="n">status_to_save</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_status_to_save</span><span class="p">(</span><span class="n">timestamp</span><span class="o">=</span><span class="n">timestamp</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">status_to_save</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">status_to_save</span><span class="p">,</span> <span class="n">triggered_vars</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="devices.status.Status.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">error_variables_path</span><span class="p">)</span></code>
+
+<a href="#devices.status.Status.__init__" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Initialize Status with error variable configurations.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>error_variables_path</code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to YAML file containing error variable
+configurations.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>devices/status.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error_variables_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize Status with error variable configurations.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        error_variables_path: Path to YAML file containing error variable</span>
+<span class="sd">            configurations.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">error_variable_config_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_error_variable_config_list</span><span class="p">(</span>
+        <span class="n">error_variables_path</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="devices.status.Status.compare_vars" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">compare_vars</span><span class="p">(</span><span class="n">timestamp</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">device_variable</span><span class="p">:</span> <span class="n">DeviceVariable</span><span class="p">,</span> <span class="n">error_variable_conf</span><span class="p">:</span> <span class="n">ErrorVariablesConfig</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span></code>
+
+<a href="#devices.status.Status.compare_vars" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Compare a device variable against its error configuration threshold.</p>
+<p>Evaluates the device variable's processed_data against the threshold
+using the configured comparison operator. Updates state accordingly
+and returns whether the threshold condition was met (triggered).</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>timestamp</code></td>
+            <td>
+                  <code><span title="datetime.datetime">datetime</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Timestamp for status evaluation.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>device_variable</code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="devices.deviceVariables.DeviceVariable" href="../deviceVariables/#devices.deviceVariables.DeviceVariable">DeviceVariable</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Device variable to evaluate.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>error_variable_conf</code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="devices.status.ErrorVariablesConfig" href="#devices.status.ErrorVariablesConfig">ErrorVariablesConfig</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Error variable configuration with threshold
+and comparison settings.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>True if the threshold condition was met (error triggered),</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>False if the variable is within normal limits (OK status).</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>devices/status.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">compare_vars</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">timestamp</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span>
+    <span class="n">device_variable</span><span class="p">:</span> <span class="n">DeviceVariable</span><span class="p">,</span>
+    <span class="n">error_variable_conf</span><span class="p">:</span> <span class="n">ErrorVariablesConfig</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compare a device variable against its error configuration threshold.</span>
+
+<span class="sd">    Evaluates the device variable&#39;s processed_data against the threshold</span>
+<span class="sd">    using the configured comparison operator. Updates state accordingly</span>
+<span class="sd">    and returns whether the threshold condition was met (triggered).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        timestamp: Timestamp for status evaluation.</span>
+<span class="sd">        device_variable: Device variable to evaluate.</span>
+<span class="sd">        error_variable_conf: Error variable configuration with threshold</span>
+<span class="sd">            and comparison settings.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        True if the threshold condition was met (error triggered),</span>
+<span class="sd">        False if the variable is within normal limits (OK status).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">error_variable_conf</span><span class="o">.</span><span class="n">comparison</span> <span class="ow">and</span> <span class="n">error_variable_conf</span><span class="o">.</span><span class="n">flag</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="n">op</span> <span class="o">=</span> <span class="n">COMPARISON_OPS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">error_variable_conf</span><span class="o">.</span><span class="n">comparison</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">op</span> <span class="ow">and</span> <span class="n">op</span><span class="p">(</span><span class="n">device_variable</span><span class="o">.</span><span class="n">processed_data</span><span class="p">,</span> <span class="n">error_variable_conf</span><span class="o">.</span><span class="n">threshold</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_state_and_state_history</span><span class="p">(</span>
+            <span class="n">timestamp</span><span class="o">=</span><span class="n">timestamp</span><span class="p">,</span>
+            <span class="n">error_variable_config</span><span class="o">=</span><span class="n">error_variable_conf</span><span class="p">,</span>
+            <span class="n">flag_enum</span><span class="o">=</span><span class="n">error_variable_conf</span><span class="o">.</span><span class="n">flag</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_state_and_state_history</span><span class="p">(</span>
+        <span class="n">timestamp</span><span class="o">=</span><span class="n">timestamp</span><span class="p">,</span>
+        <span class="n">error_variable_config</span><span class="o">=</span><span class="n">error_variable_conf</span><span class="p">,</span>
+        <span class="n">flag_enum</span><span class="o">=</span><span class="n">StatusFlags</span><span class="o">.</span><span class="n">OK</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="devices.status.Status.deserialize" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">deserialize</span><span class="p">(</span><span class="n">status_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span> <span class="o">|</span> <span class="nb">dict</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Self</span> <span class="o">|</span> <span class="kc">None</span></code>
+
+<a href="#devices.status.Status.deserialize" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Deserialize status state from a dictionary.</p>
+<p>Restores the state and state_history from previously serialized data.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>status_dict</code></td>
+            <td>
+                  <code>dict[str, list | dict]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Dictionary containing serialized state and state_history.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="typing.Self">Self</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Self for method chaining.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>devices/status.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">deserialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span> <span class="o">|</span> <span class="nb">dict</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Self</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Deserialize status state from a dictionary.</span>
+
+<span class="sd">    Restores the state and state_history from previously serialized data.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        status_dict: Dictionary containing serialized state and state_history.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Self for method chaining.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">status_dict</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;status_dict is empty can not deserialize status&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">error_variable_config_list</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">state_dict</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
+                <span class="p">(</span>
+                    <span class="n">d</span>
+                    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">status_dict</span><span class="p">[</span><span class="s2">&quot;state&quot;</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;error_name&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">i</span><span class="o">.</span><span class="n">error_name</span>
+                <span class="p">),</span>
+                <span class="kc">None</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="n">state_history_dict</span> <span class="o">=</span> <span class="n">status_dict</span><span class="p">[</span><span class="s2">&quot;state_history&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">error_name</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">state_history</span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">error_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">StatusVariables</span><span class="p">(</span><span class="o">**</span><span class="n">state_history_dict</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">**</span><span class="n">state_dict</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;could not restore (</span><span class="si">{</span><span class="n">i</span><span class="o">.</span><span class="n">error_name</span><span class="si">}</span><span class="s2">), due to </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">continue</span>
+
+    <span class="k">return</span> <span class="bp">self</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="devices.status.Status.get_status_to_save" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_status_to_save</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">StatusVariables</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span></code>
+
+<a href="#devices.status.Status.get_status_to_save" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Determine which status variables should be saved to disk.</p>
+<p>Status variables are saved if:
+- They are new (not in state_history)
+- Their flag has changed since last save
+- The save interval has elapsed since last save</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>timestamp</code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Current timestamp for comparison.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>list[<a class="autorefs autorefs-internal" title="devices.status.StatusVariables" href="#devices.status.StatusVariables">StatusVariables</a>] | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of StatusVariables to save, sorted by error_name, or None</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code>list[<a class="autorefs autorefs-internal" title="devices.status.StatusVariables" href="#devices.status.StatusVariables">StatusVariables</a>] | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>if no status needs to be saved.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>devices/status.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span>
+<span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span>
+<span class="normal">378</span>
+<span class="normal">379</span>
+<span class="normal">380</span>
+<span class="normal">381</span>
+<span class="normal">382</span>
+<span class="normal">383</span>
+<span class="normal">384</span>
+<span class="normal">385</span>
+<span class="normal">386</span>
+<span class="normal">387</span>
+<span class="normal">388</span>
+<span class="normal">389</span>
+<span class="normal">390</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_status_to_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">StatusVariables</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Determine which status variables should be saved to disk.</span>
+
+<span class="sd">    Status variables are saved if:</span>
+<span class="sd">    - They are new (not in state_history)</span>
+<span class="sd">    - Their flag has changed since last save</span>
+<span class="sd">    - The save interval has elapsed since last save</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        timestamp: Current timestamp for comparison.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List of StatusVariables to save, sorted by error_name, or None</span>
+<span class="sd">        if no status needs to be saved.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">status_to_save</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">state_history</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">:</span>
+            <span class="n">status_to_save</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">update_state_history_and_saving_ts</span><span class="p">(</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span>
+            <span class="n">status_to_save</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">status_to_save</span><span class="p">:</span> <span class="n">status_to_save</span><span class="o">.</span><span class="n">error_name</span>
+        <span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">new_state</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">:</span>
+        <span class="n">old_state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">state_history</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">new_state</span><span class="o">.</span><span class="n">error_name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">old_state</span><span class="p">:</span>
+            <span class="n">status_to_save</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">update_state_history_and_saving_ts</span><span class="p">(</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">new_state</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="k">continue</span>
+
+        <span class="k">if</span> <span class="n">timestamp</span> <span class="o">-</span> <span class="n">old_state</span><span class="o">.</span><span class="n">last_saving_timestamp</span> <span class="o">&gt;</span> <span class="n">timedelta</span><span class="p">(</span>
+            <span class="n">seconds</span><span class="o">=</span><span class="n">timeparse</span><span class="p">(</span><span class="n">new_state</span><span class="o">.</span><span class="n">_err_var_config</span><span class="o">.</span><span class="n">save_interval</span><span class="p">)</span>
+        <span class="p">):</span>
+            <span class="n">status_to_save</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">update_state_history_and_saving_ts</span><span class="p">(</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">new_state</span><span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">old_state</span><span class="o">.</span><span class="n">flag</span> <span class="o">!=</span> <span class="n">new_state</span><span class="o">.</span><span class="n">flag</span><span class="p">:</span>
+            <span class="n">status_to_save</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">update_state_history_and_saving_ts</span><span class="p">(</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">new_state</span><span class="p">)</span>
+            <span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">status_to_save</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span>
+        <span class="n">status_to_save</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">status_to_save</span><span class="p">:</span> <span class="n">status_to_save</span><span class="o">.</span><span class="n">error_name</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="devices.status.Status.load_error_variable_config_list" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">load_error_variable_config_list</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
+
+<a href="#devices.status.Status.load_error_variable_config_list" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Load error variable configurations from a YAML file.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>path</code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the YAML file containing error variable configurations.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of ErrorVariablesConfig instances, or None if file not found.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>devices/status.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">load_error_variable_config_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load error variable configurations from a YAML file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path: Path to the YAML file containing error variable configurations.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List of ErrorVariablesConfig instances, or None if file not found.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">ErrorVariablesConfig</span><span class="p">(</span><span class="o">**</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;file=</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2"> not found&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="devices.status.Status.parse_vars" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">parse_vars</span><span class="p">(</span><span class="nb">vars</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">DeviceVariable</span><span class="p">],</span> <span class="n">timestamp</span><span class="p">:</span> <span class="n">datetime</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="n">StatusVariables</span><span class="p">],</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">DeviceVariable</span><span class="p">]]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span></code>
+
+<a href="#devices.status.Status.parse_vars" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Parse device variables and evaluate status conditions.</p>
+<p>Evaluates all device variables against their error configurations,
+updates the status state, and determines which status variables
+should be saved. Also identifies which variables triggered error
+conditions.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>vars</code></td>
+            <td>
+                  <code>dict[str, <a class="autorefs autorefs-internal" title="devices.deviceVariables.DeviceVariable" href="../deviceVariables/#devices.deviceVariables.DeviceVariable">DeviceVariable</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Dictionary mapping variable names to DeviceVariable instances.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>timestamp</code></td>
+            <td>
+                  <code><span title="datetime.datetime">datetime</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Timestamp for status evaluation.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>tuple[list[<a class="autorefs autorefs-internal" title="devices.status.StatusVariables" href="#devices.status.StatusVariables">StatusVariables</a>], dict[str, <a class="autorefs autorefs-internal" title="devices.deviceVariables.DeviceVariable" href="../deviceVariables/#devices.deviceVariables.DeviceVariable">DeviceVariable</a>]] | tuple[None, None]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Tuple of (list of StatusVariables to save, dict of triggered variables),</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code>tuple[list[<a class="autorefs autorefs-internal" title="devices.status.StatusVariables" href="#devices.status.StatusVariables">StatusVariables</a>], dict[str, <a class="autorefs autorefs-internal" title="devices.deviceVariables.DeviceVariable" href="../deviceVariables/#devices.deviceVariables.DeviceVariable">DeviceVariable</a>]] | tuple[None, None]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>or (None, None) if no status needs to be saved or error configs are missing.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>devices/status.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">392</span>
+<span class="normal">393</span>
+<span class="normal">394</span>
+<span class="normal">395</span>
+<span class="normal">396</span>
+<span class="normal">397</span>
+<span class="normal">398</span>
+<span class="normal">399</span>
+<span class="normal">400</span>
+<span class="normal">401</span>
+<span class="normal">402</span>
+<span class="normal">403</span>
+<span class="normal">404</span>
+<span class="normal">405</span>
+<span class="normal">406</span>
+<span class="normal">407</span>
+<span class="normal">408</span>
+<span class="normal">409</span>
+<span class="normal">410</span>
+<span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span>
+<span class="normal">423</span>
+<span class="normal">424</span>
+<span class="normal">425</span>
+<span class="normal">426</span>
+<span class="normal">427</span>
+<span class="normal">428</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">parse_vars</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="nb">vars</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">DeviceVariable</span><span class="p">],</span> <span class="n">timestamp</span><span class="p">:</span> <span class="n">datetime</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="n">StatusVariables</span><span class="p">],</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">DeviceVariable</span><span class="p">]]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse device variables and evaluate status conditions.</span>
+
+<span class="sd">    Evaluates all device variables against their error configurations,</span>
+<span class="sd">    updates the status state, and determines which status variables</span>
+<span class="sd">    should be saved. Also identifies which variables triggered error</span>
+<span class="sd">    conditions.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        vars: Dictionary mapping variable names to DeviceVariable instances.</span>
+<span class="sd">        timestamp: Timestamp for status evaluation.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Tuple of (list of StatusVariables to save, dict of triggered variables),</span>
+<span class="sd">        or (None, None) if no status needs to be saved or error configs are missing.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">error_variable_config_list</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;error variable list was not provided&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">triggered_vars</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">err_var_conf</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">error_variable_config_list</span><span class="p">:</span>
+        <span class="n">vars_to_compare</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">err_var_conf</span><span class="o">.</span><span class="n">variable_name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">vars_to_compare</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;error name: </span><span class="si">{</span><span class="n">err_var_conf</span><span class="o">.</span><span class="n">error_name</span><span class="si">}</span><span class="s2"> not found in </span><span class="si">{</span><span class="nb">vars</span><span class="si">=}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">compare_vars</span><span class="p">(</span>
+            <span class="n">timestamp</span><span class="o">=</span><span class="n">timestamp</span><span class="p">,</span>
+            <span class="n">device_variable</span><span class="o">=</span><span class="n">vars_to_compare</span><span class="p">,</span>
+            <span class="n">error_variable_conf</span><span class="o">=</span><span class="n">err_var_conf</span><span class="p">,</span>
+        <span class="p">):</span>
+            <span class="n">triggered_vars</span><span class="p">[</span><span class="n">err_var_conf</span><span class="o">.</span><span class="n">variable_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">vars_to_compare</span>
+    <span class="n">status_to_save</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_status_to_save</span><span class="p">(</span><span class="n">timestamp</span><span class="o">=</span><span class="n">timestamp</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">status_to_save</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">status_to_save</span><span class="p">,</span> <span class="n">triggered_vars</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="devices.status.Status.serialize" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">serialize</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span></code>
+
+<a href="#devices.status.Status.serialize" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Serialize the status state to a dictionary.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>dict[str, <span title="typing.Any">Any</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Dictionary containing serialized state and state_history.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>devices/status.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Serialize the status state to a dictionary.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Dictionary containing serialized state and state_history.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="s2">&quot;state_history&quot;</span><span class="p">]:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">adapter</span> <span class="o">=</span> <span class="n">TypeAdapter</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+        <span class="n">data</span><span class="p">[</span><span class="n">var</span><span class="p">]</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">dump_python</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;json&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">data</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="devices.status.Status.update_state_and_state_history" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">update_state_and_state_history</span><span class="p">(</span><span class="n">timestamp</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">error_variable_config</span><span class="p">:</span> <span class="n">ErrorVariablesConfig</span><span class="p">,</span> <span class="n">flag_enum</span><span class="p">:</span> <span class="n">StatusFlags</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span></code>
+
+<a href="#devices.status.Status.update_state_and_state_history" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Update state with a new status variable and check if flag changed.</p>
+<p>Creates a new StatusVariables instance, adds it to the state list,
+and checks if the flag has changed compared to the state history.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>timestamp</code></td>
+            <td>
+                  <code><span title="datetime.datetime">datetime</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Timestamp for the new status.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>error_variable_config</code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="devices.status.ErrorVariablesConfig" href="#devices.status.ErrorVariablesConfig">ErrorVariablesConfig</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Error variable configuration.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>flag_enum</code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="devices.status.StatusFlags" href="#devices.status.StatusFlags">StatusFlags</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Status flag to set.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>True if the flag matches the previous state (no change),</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>False if the flag has changed or no previous state exists.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>devices/status.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_state_and_state_history</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">timestamp</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span>
+    <span class="n">error_variable_config</span><span class="p">:</span> <span class="n">ErrorVariablesConfig</span><span class="p">,</span>
+    <span class="n">flag_enum</span><span class="p">:</span> <span class="n">StatusFlags</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Update state with a new status variable and check if flag changed.</span>
+
+<span class="sd">    Creates a new StatusVariables instance, adds it to the state list,</span>
+<span class="sd">    and checks if the flag has changed compared to the state history.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        timestamp: Timestamp for the new status.</span>
+<span class="sd">        error_variable_config: Error variable configuration.</span>
+<span class="sd">        flag_enum: Status flag to set.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        True if the flag matches the previous state (no change),</span>
+<span class="sd">        False if the flag has changed or no previous state exists.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">status_obj</span> <span class="o">=</span> <span class="n">StatusVariables</span><span class="p">(</span>
+        <span class="n">error_name</span><span class="o">=</span><span class="n">error_variable_config</span><span class="o">.</span><span class="n">error_name</span><span class="p">,</span>
+        <span class="n">flag</span><span class="o">=</span><span class="n">flag_enum</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="n">error_variable_config</span><span class="o">.</span><span class="n">description</span><span class="p">,</span>
+        <span class="n">timestamp</span><span class="o">=</span><span class="n">timestamp</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">status_obj</span><span class="o">.</span><span class="n">_err_var_config</span> <span class="o">=</span> <span class="n">error_variable_config</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">status_obj</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">state_history</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="n">old_state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">state_history</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">error_variable_config</span><span class="o">.</span><span class="n">error_name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">old_state</span> <span class="ow">or</span> <span class="n">old_state</span><span class="o">.</span><span class="n">flag</span> <span class="o">!=</span> <span class="n">status_obj</span><span class="o">.</span><span class="n">flag</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="devices.status.Status.update_state_history_and_saving_ts" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">update_state_history_and_saving_ts</span><span class="p">(</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">new_state</span><span class="p">:</span> <span class="n">StatusVariables</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StatusVariables</span></code>
+
+<a href="#devices.status.Status.update_state_history_and_saving_ts" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Update state history with a new state and set its saving timestamp.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>timestamp</code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Timestamp to set as the last saving timestamp.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>new_state</code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="devices.status.StatusVariables" href="#devices.status.StatusVariables">StatusVariables</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>StatusVariables instance to save to history.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="devices.status.StatusVariables" href="#devices.status.StatusVariables">StatusVariables</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The updated StatusVariables instance with last_saving_timestamp set.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>devices/status.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_state_history_and_saving_ts</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">,</span> <span class="n">new_state</span><span class="p">:</span> <span class="n">StatusVariables</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StatusVariables</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Update state history with a new state and set its saving timestamp.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        timestamp: Timestamp to set as the last saving timestamp.</span>
+<span class="sd">        new_state: StatusVariables instance to save to history.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The updated StatusVariables instance with last_saving_timestamp set.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">new_state</span><span class="o">.</span><span class="n">last_saving_timestamp</span> <span class="o">=</span> <span class="n">timestamp</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">state_history</span><span class="p">[</span><span class="n">new_state</span><span class="o">.</span><span class="n">error_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_state</span>
+    <span class="k">return</span> <span class="n">new_state</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
+<h3 id="convert_datetime_to_iso">convert_datetime_to_iso<a class="headerlink" href="#convert_datetime_to_iso" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="devices.status.convert_datetime_to_iso"></a>
+    <div class="doc doc-contents first">
+
+      <p>Convert a datetime object to ISO format string.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>ts</code></td>
+            <td>
+                  <code><span title="datetime.datetime">datetime</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Datetime object to convert.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>ISO format string representation of the datetime.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>devices/status.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">convert_datetime_to_iso</span><span class="p">(</span><span class="n">ts</span><span class="p">:</span> <span class="n">datetime</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a datetime object to ISO format string.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        ts: Datetime object to convert.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        ISO format string representation of the datetime.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">ts</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h2 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="devices.status.COMPARISON_OPS" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">devices</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">COMPARISON_OPS</span> <span class="o">=</span> <span class="p">{</span><span class="n">Comparisons</span><span class="o">.</span><span class="n">EQUAL</span><span class="p">:</span> <span class="n">operator</span><span class="o">.</span><span class="n">eq</span><span class="p">,</span> <span class="n">Comparisons</span><span class="o">.</span><span class="n">EQUAL_OR_GREATER</span><span class="p">:</span> <span class="n">operator</span><span class="o">.</span><span class="n">ge</span><span class="p">,</span> <span class="n">Comparisons</span><span class="o">.</span><span class="n">EQUAL_OR_LESS</span><span class="p">:</span> <span class="n">operator</span><span class="o">.</span><span class="n">le</span><span class="p">,</span> <span class="n">Comparisons</span><span class="o">.</span><span class="n">LESS_THAN</span><span class="p">:</span> <span class="n">operator</span><span class="o">.</span><span class="n">lt</span><span class="p">,</span> <span class="n">Comparisons</span><span class="o">.</span><span class="n">GREATER_THAN</span><span class="p">:</span> <span class="n">operator</span><span class="o">.</span><span class="n">gt</span><span class="p">,</span> <span class="n">Comparisons</span><span class="o">.</span><span class="n">AND</span><span class="p">:</span> <span class="n">operator</span><span class="o">.</span><span class="n">and_</span><span class="p">}</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+<a href="#devices.status.COMPARISON_OPS" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents first">
+
+      <p>Mapping of Comparisons enum values to Python operator functions.</p>
+    </div>
+
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../interfaces/modbusRTU/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Modbusrtu" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Modbusrtu
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../external_api/epever/epever_devices/" class="md-footer__link md-footer__link--next" aria-label="Next: Epever Devices" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Epever Devices
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 The Global Fund.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.path", "navigation.tracking", "navigation.expand", "navigation.indexes", "navigation.footer", "navigation.top", "toc.follow", "toc.progress", "toc.auto", "search.highlight", "search.suggest"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
